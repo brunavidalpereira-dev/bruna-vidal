@@ -1,0 +1,160 @@
+{
+  "nome": "Bruna Vidal",
+  "cargo": "Head de Digital & Influência",
+  "apresentacao": "Liderança estratégica em digital e influência, conectando marcas, pessoas e cultura. Da estratégia à execução, conduzo equipes e campanhas de grande escala com visão integrada, gestão e foco em resultados.",
+  "botao_trajetoria": "Conheça minha trajetória",
+  "email": "brunavidalpereira@gmail.com",
+  "localizacao": "São Paulo / Salvador",
+  "linkedin": "",
+  "foto": "",
+  "indicadores": [
+    { "numero": "5+", "unidade": "anos", "legenda": "de experiência como Head de Digital & Influência", "publicar": false },
+    { "numero": "280+", "unidade": "conteúdos", "legenda": "desenvolvidos em uma única campanha", "publicar": true },
+    { "numero": "5", "unidade": "praças", "legenda": "ativadas simultaneamente durante a Copa do Mundo", "publicar": true },
+    { "numero": "XX", "unidade": "marcas e/ou campanhas", "legenda": "atendidas", "publicar": false }
+  ],
+  "frentes": "Quatro frentes de atuação: estratégia, planejamento, liderança e gestão de campanhas.",
+  "cases": [
+    {
+      "cliente": "Sebrae",
+      "titulo": "Nosso Canto",
+      "subtitulo": "",
+      "resumo": "Clássicos da música brasileira regravados por uma nova geração de vozes, em uma campanha de 284 conteúdos para aproximar o Sebrae da geração Z.",
+      "secoes": [
+        { "titulo": "Desafio", "texto": "Conectar o Sebrae à geração Z por meio de uma campanha culturalmente relevante." },
+        { "titulo": "Estratégia e execução", "texto": "Criação do conceito de regravação de clássicos da música brasileira nas vozes de uma nova geração. O projeto reuniu 284 conteúdos, incluindo hero clips, minidocumentários, AON e influência." },
+        { "titulo": "Atuação", "texto": "Mapeamento e curadoria de artistas e influenciadores, além de direção e gestão do projeto de ponta a ponta." }
+      ],
+      "destaque_numero": "284",
+      "destaque_legenda": "conteúdos desenvolvidos em uma única campanha",
+      "ficha": [
+        { "rotulo": "Cliente", "valor": "Sebrae" },
+        { "rotulo": "Público", "valor": "Geração Z" },
+        { "rotulo": "Formatos", "valor": "Hero clips, minidocumentários, AON e influência" },
+        { "rotulo": "Volume", "valor": "284 conteúdos" },
+        { "rotulo": "Período", "valor": "" }
+      ],
+      "capa_estilo": "azul",
+      "capa_linha": "Música brasileira, nova geração",
+      "capa_etiquetas": ["Hero clips", "Minidocumentários", "AON", "Influência"],
+      "capa_rotulo_item": "",
+      "capa_imagem": "",
+      "galeria": []
+    },
+    {
+      "cliente": "Brahma",
+      "titulo": "Arena N1",
+      "subtitulo": "Copa do Mundo",
+      "resumo": "Cinco arenas de transmissão da Copa do Mundo funcionando ao mesmo tempo, com squads regionais de influenciadores levando o público para a experiência presencial da marca.",
+      "secoes": [
+        { "titulo": "Contexto", "texto": "Projeto proprietário da agência, com cinco arenas de transmissão de jogos da Copa do Mundo acontecendo simultaneamente." },
+        { "titulo": "Atuação", "texto": "Desenvolvimento e gestão de squads regionais de influenciadores em cada uma das cinco praças, para divulgar as arenas e proporcionar experiências presenciais ligadas à marca." }
+      ],
+      "destaque_numero": "5",
+      "destaque_legenda": "praças ativadas simultaneamente",
+      "ficha": [
+        { "rotulo": "Cliente", "valor": "Brahma" },
+        { "rotulo": "Natureza", "valor": "Projeto proprietário da agência" },
+        { "rotulo": "Praças", "valor": "5, com ativação simultânea" },
+        { "rotulo": "Cidades", "valor": "" },
+        { "rotulo": "Período", "valor": "" }
+      ],
+      "capa_estilo": "escuro",
+      "capa_linha": "Copa do Mundo",
+      "capa_etiquetas": [],
+      "capa_rotulo_item": "Praça",
+      "capa_imagem": "",
+      "galeria": []
+    },
+    {
+      "cliente": "Caixa",
+      "titulo": "AON Loterias",
+      "subtitulo": "",
+      "resumo": "Um squad de 13 influenciadores produzindo conteúdo social para as Loterias da Caixa ao longo de 2026, com estratégia de comunicação organizada por pilar.",
+      "secoes": [
+        { "titulo": "Contexto", "texto": "Estruturação de um squad de 13 influenciadores para produção de conteúdo social das Loterias ao longo de 2026." },
+        { "titulo": "Atuação", "texto": "Mapeamento de perfis, estratégia de comunicação por pilar e gestão integral das campanhas." },
+        { "titulo": "Destaque", "texto": "13 influenciadores no squad, em operação contínua durante o ano." }
+      ],
+      "destaque_numero": "13",
+      "destaque_legenda": "influenciadores no squad",
+      "ficha": [
+        { "rotulo": "Cliente", "valor": "Caixa Econômica Federal" },
+        { "rotulo": "Produto", "valor": "Loterias" },
+        { "rotulo": "Squad", "valor": "13 influenciadores" },
+        { "rotulo": "Período", "valor": "2026" }
+      ],
+      "capa_estilo": "claro",
+      "capa_linha": "2026",
+      "capa_etiquetas": [],
+      "capa_rotulo_item": "",
+      "capa_imagem": "",
+      "galeria": []
+    }
+  ],
+  "projetos": [
+    { "categoria": "Público", "cliente": "SECOM BR", "titulo": "São João Nordeste", "texto": "", "imagem": "" },
+    { "categoria": "Público", "cliente": "SECOM BR", "titulo": "Isenção de IR + Luz do Povo", "texto": "", "imagem": "" },
+    { "categoria": "Público", "cliente": "SECOM BA", "titulo": "Minha Casa Minha Vida", "texto": "", "imagem": "" },
+    { "categoria": "Público", "cliente": "SECOM BA", "titulo": "VLT", "texto": "", "imagem": "" },
+    { "categoria": "Público", "cliente": "Embratur", "titulo": "Latinos 2026", "texto": "Campanha internacional em que cinco influenciadores estrangeiros viveram experiências distintas pelo Brasil, com mapeamento, contratação, logística e gestão de ponta a ponta.", "imagem": "" },
+    { "categoria": "Público", "cliente": "SECOM CE", "titulo": "Réveillon 300 Anos Fortaleza", "texto": "Seleção e gestão de influenciadores regionais para promover e viver a celebração dos 300 anos de Fortaleza, com cobertura em tempo real ao longo de três dias.", "imagem": "" },
+    { "categoria": "Privado", "cliente": "Brahma", "titulo": "Sapucaí com Paolla Oliveira", "texto": "", "imagem": "" },
+    { "categoria": "Privado", "cliente": "Brahma", "titulo": "Sapucaí com Sabrina Sato", "texto": "", "imagem": "" },
+    { "categoria": "Privado", "cliente": "Brahma", "titulo": "Carna Copa: Abrasileirando Carlo Ancelotti", "texto": "Gestão de um squad de influenciadores em Salvador, Rio de Janeiro e São Paulo para divulgar a ativação de abrasileiramento de Carlo Ancelotti.", "imagem": "" }
+  ],
+  "marcas": [
+    { "nome": "SECOM Brasil", "logo": "" },
+    { "nome": "SECOM Bahia", "logo": "" },
+    { "nome": "SECOM Ceará", "logo": "" },
+    { "nome": "Sebrae", "logo": "" },
+    { "nome": "Embratur", "logo": "" },
+    { "nome": "Caixa Econômica Federal", "logo": "" },
+    { "nome": "Brahma", "logo": "" },
+    { "nome": "Ambev", "logo": "" }
+  ],
+  "contato_home": {
+    "titulo": "Vamos construir o próximo grande projeto juntos?",
+    "texto": "Estratégia, liderança e influência para conectar marcas e pessoas e transformar objetivos em campanhas relevantes.",
+    "botao": "Entre em contato"
+  },
+  "sobre": {
+    "titulo": "Estratégia, liderança e influência.",
+    "texto": "Minha trajetória une visão estratégica, gestão e execução no universo da comunicação. Hoje, lidero operações de digital e influência, conectando equipes, talentos e marcas em projetos que exigem planejamento integrado, capacidade de negociação e excelência na entrega.",
+    "trajetoria": [
+      {
+        "empresa": "California",
+        "cargo": "Head de Digital & Influência",
+        "periodo": "Nov 2024 · atual",
+        "descricao": "Liderança de operações nacionais de digital e influência, do briefing e do planejamento estratégico à execução e à análise de campanhas. Gestão de squads, mapeamento e contratação de influenciadores, roteiros, cronogramas e relatórios, com integração entre AON, mídia, BI, conteúdo e influência.",
+        "clientes_rotulo": "Clientes e projetos",
+        "clientes": "Governo Federal, Governo da Bahia, Caixa, Sebrae, Ambev e Natura"
+      },
+      {
+        "empresa": "Pitanga Produtora",
+        "cargo": "Fundadora e CEO",
+        "periodo": "Dez 2023 · Out 2024",
+        "descricao": "Fundação e gestão de uma produtora audiovisual e consultoria de patrocínios para eventos, com projetos de conteúdo e entregas de marca em redes sociais e influência.",
+        "clientes_rotulo": "Marcas",
+        "clientes": "Camarote Salvador, New Balance Brasil, Kodak, Don Luiz, Ambev e Pernod Ricard"
+      }
+    ],
+    "competencias": [
+      "Estratégia e planejamento digital",
+      "Liderança e gestão de pessoas",
+      "Estratégia e gestão de influência",
+      "Gestão integral de campanhas",
+      "Negociação e relacionamento com clientes e talentos",
+      "Análise de desempenho e relatórios",
+      "Briefing e gestão de storymakers e filmmakers",
+      "Integração entre conteúdo, mídia, BI e influência"
+    ],
+    "formacao_curso": "Direito",
+    "formacao_instituicao": "Universidade Presbiteriana Mackenzie",
+    "formacao_periodo": "2017 a 2021",
+    "idiomas": "Inglês e espanhol",
+    "contato_titulo": "Vamos conversar?",
+    "contato_texto": "Para projetos de digital e influência, squads de creators e campanhas com várias praças.",
+    "contato_botao": "Entre em contato"
+  }
+}

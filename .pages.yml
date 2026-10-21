@@ -1,0 +1,298 @@
+# Editor do site (Pages CMS): https://app.pagescms.org
+# Cada bloco abaixo vira um formulário. Ao salvar, o site se atualiza em cerca de um minuto.
+
+media:
+  input: images
+  output: images
+  categories: [image]
+
+content:
+  - name: site
+    label: Conteúdo do site
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+
+      # ---------- Apresentação ----------
+      - name: nome
+        label: Nome
+        type: string
+        required: true
+      - name: cargo
+        label: Cargo
+        type: string
+      - name: apresentacao
+        label: Texto de apresentação (Home)
+        type: text
+      - name: botao_trajetoria
+        label: Texto do botão para a página Sobre
+        type: string
+      - name: foto
+        label: Fotografia profissional (aparece só na página Sobre)
+        description: Proporção vertical, de preferência 4:5.
+        type: image
+
+      # ---------- Contato ----------
+      - name: email
+        label: E-mail de contato
+        type: string
+      - name: localizacao
+        label: Localização
+        type: string
+      - name: linkedin
+        label: Endereço do LinkedIn
+        description: Endereço completo, começando com https://. Deixe vazio para não mostrar.
+        type: string
+
+      # ---------- Indicadores ----------
+      - name: indicadores
+        label: Big numbers
+        description: Aparecem na Home e na página Sobre. Desmarque "Publicar" para esconder um número sem apagá-lo.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{numero} {unidade}"
+        fields:
+          - name: numero
+            label: Número
+            description: Ex. 284, 5+, 13
+            type: string
+          - name: unidade
+            label: Unidade
+            description: Ex. conteúdos, praças, anos
+            type: string
+          - name: legenda
+            label: Legenda
+            type: string
+          - name: publicar
+            label: Publicar
+            type: boolean
+      - name: frentes
+        label: Frase das frentes de atuação (página Sobre)
+        type: text
+
+      # ---------- Cases em destaque ----------
+      - name: cases
+        label: Cases em destaque
+        description: A ordem da lista é a ordem no site. Arraste para reordenar.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{cliente} · {titulo}"
+        fields:
+          - name: cliente
+            label: Cliente
+            type: string
+            required: true
+          - name: titulo
+            label: Título do case
+            type: string
+            required: true
+          - name: subtitulo
+            label: Subtítulo (opcional)
+            type: string
+          - name: resumo
+            label: Resumo (abertura da página do case)
+            type: text
+          - name: secoes
+            label: Blocos de texto
+            description: Ex. Desafio, Estratégia e execução, Atuação.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{titulo}"
+            fields:
+              - name: titulo
+                label: Título do bloco
+                type: string
+              - name: texto
+                label: Texto
+                type: text
+          - name: destaque_numero
+            label: Número de destaque
+            type: string
+          - name: destaque_legenda
+            label: Legenda do número de destaque
+            type: string
+          - name: ficha
+            label: Ficha técnica
+            description: Linhas sem valor não aparecem no site.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{rotulo}: {valor}"
+            fields:
+              - name: rotulo
+                label: Rótulo
+                type: string
+              - name: valor
+                label: Valor
+                type: string
+          - name: capa_imagem
+            label: Imagem de capa
+            description: Se houver imagem, ela substitui a capa tipográfica. Proporção 16:10.
+            type: image
+          - name: capa_estilo
+            label: Estilo da capa tipográfica (quando não há imagem)
+            type: select
+            options:
+              values:
+                - name: azul
+                  label: Azul, número grande
+                - name: escuro
+                  label: Escuro, com colunas (uma por item)
+                - name: claro
+                  label: Claro, com quadros (um por item)
+          - name: capa_linha
+            label: Linha de apoio da capa
+            description: Texto curto no canto da capa. Ex. Copa do Mundo
+            type: string
+          - name: capa_etiquetas
+            label: Etiquetas da capa (estilo azul)
+            description: Ex. formatos do projeto.
+            type: string
+            list: true
+          - name: capa_rotulo_item
+            label: Nome de cada coluna (estilo escuro)
+            description: Ex. Praça. As colunas ficam numeradas.
+            type: string
+          - name: galeria
+            label: Galeria de imagens
+            description: Até 6 imagens autorizadas do projeto.
+            type: image
+            options:
+              multiple:
+                max: 6
+
+      # ---------- Outros projetos ----------
+      - name: projetos
+        label: Outros projetos
+        description: Projetos sem texto e sem imagem aparecem na lista, mas não abrem.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{cliente} · {titulo}"
+        fields:
+          - name: categoria
+            label: Categoria
+            type: select
+            options:
+              values: [Público, Privado]
+          - name: cliente
+            label: Cliente
+            type: string
+          - name: titulo
+            label: Título
+            type: string
+            required: true
+          - name: texto
+            label: Texto do projeto
+            type: text
+          - name: imagem
+            label: Imagem (opcional)
+            type: image
+
+      # ---------- Marcas ----------
+      - name: marcas
+        label: Marcas e instituições
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{nome}"
+        fields:
+          - name: nome
+            label: Nome
+            type: string
+            required: true
+          - name: logo
+            label: Logotipo oficial (opcional)
+            description: Se houver logotipo, ele substitui o nome escrito. Use arquivo PNG ou SVG com fundo transparente.
+            type: image
+
+      # ---------- Chamada final da Home ----------
+      - name: contato_home
+        label: Chamada final da Home
+        type: object
+        fields:
+          - name: titulo
+            label: Título
+            type: string
+          - name: texto
+            label: Texto
+            type: text
+          - name: botao
+            label: Texto do botão
+            type: string
+
+      # ---------- Página Sobre ----------
+      - name: sobre
+        label: Página Sobre
+        type: object
+        fields:
+          - name: titulo
+            label: Título de abertura
+            type: string
+          - name: texto
+            label: Texto de abertura
+            type: text
+          - name: trajetoria
+            label: Trajetória
+            description: A primeira da lista aparece no topo.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{empresa} · {cargo}"
+            fields:
+              - name: empresa
+                label: Empresa
+                type: string
+              - name: cargo
+                label: Cargo
+                type: string
+              - name: periodo
+                label: Período
+                description: Ex. Nov 2024 · atual
+                type: string
+              - name: descricao
+                label: Descrição
+                type: text
+              - name: clientes_rotulo
+                label: Rótulo da lista de clientes
+                description: Ex. Clientes e projetos, Marcas
+                type: string
+              - name: clientes
+                label: Clientes ou marcas
+                type: string
+          - name: competencias
+            label: Competências
+            type: string
+            list: true
+          - name: formacao_curso
+            label: Formação, curso
+            type: string
+          - name: formacao_instituicao
+            label: Formação, instituição
+            type: string
+          - name: formacao_periodo
+            label: Formação, período
+            type: string
+          - name: idiomas
+            label: Idiomas
+            type: string
+          - name: contato_titulo
+            label: Chamada final, título
+            type: string
+          - name: contato_texto
+            label: Chamada final, texto
+            type: text
+          - name: contato_botao
+            label: Chamada final, texto do botão
+            type: string
