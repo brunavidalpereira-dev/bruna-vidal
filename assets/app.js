@@ -119,8 +119,13 @@
 
   function caseRow(c, i) {
     const layout = ["left", "right", "full"][i % 3];
-    return `<article class="case case--${layout} g12">
-      <a class="case-cover" href="#${c._id}" aria-label="Abrir case ${esc(c.cliente)}, ${esc(c.titulo)}">${cover(c)}</a>
+    const vid = player(c.video, c.cliente + ", " + c.titulo, c.video_formato === "vertical");
+    const coverLink = `<a class="case-cover" href="#${c._id}" aria-label="Abrir case ${esc(c.cliente)}, ${esc(c.titulo)}">${cover(c)}</a>`;
+    const media = layout === "full"
+      ? coverLink + (vid ? `<div class="case-video">${vid}</div>` : "")
+      : `<div class="case-media">${coverLink}${vid}</div>`;
+    return `<article class="case case--${layout}${vid ? " has-video" : ""} g12">
+      ${media}
       <div class="case-body">
         <p class="eyebrow">Case ${pad(i + 1)} · ${esc(c.cliente)}</p>
         <h3 class="case-title">${esc(c.titulo)}${has(c.subtitulo) ? `<span>${esc(c.subtitulo)}</span>` : ""}</h3>

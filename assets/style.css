@@ -296,3 +296,14 @@ dialog::backdrop{background:rgba(42,31,24,.62)}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 #pd-video:empty{display:none}
 .pd-img{object-position:50% 28%}
+
+/* Vídeo nos cases da Home */
+.case-media{grid-column:1/-1;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.case-video{grid-column:1/-1;min-width:0}
+@media (min-width:860px){
+  .case--left .case-media{grid-column:1/9}
+  .case--right .case-media{grid-column:6/13;grid-row:1}
+  .case--full.has-video .case-video{grid-column:1/9}
+  .case--full.has-video .case-body{grid-column:9/13}
+  .case--full.has-video .case-dl{display:flex;flex-direction:column;gap:16px}
+}
