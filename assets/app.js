@@ -11,6 +11,24 @@
   const pad = n => String(n).padStart(2, "0");
   const img = p => String(p || "").trim().replace(/^\/+/, "");
   const list = v => Array.isArray(v) ? v : [];
+  const imgList = v => (Array.isArray(v) ? v : has(v) ? [v] : []).filter(has);
+
+  /* Converte um link de vídeo (Google Drive, YouTube ou Vimeo) em endereço de player. */
+  function embed(url) {
+    const u = String(url || "").trim();
+    if (!u) return "";
+    let m = u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([\w-]{10,})/);
+    if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+    m = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{6,})/);
+    if (m) return `https://www.youtube-nocookie.com/embed/${m[1]}`;
+    m = u.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if (m) return `https://player.vimeo.com/video/${m[1]}`;
+    return "";
+  }
+  const player = (url, title, vertical) => {
+    const src = embed(url);
+    return src ? `<div class="video${vertical ? " video--vertical" : ""}"><iframe src="${esc(src)}" title="${esc(title)}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>` : "";
+  };
   const slugify = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const arrow = '<span aria-hidden="true">→</span>';
 
@@ -48,8 +66,11 @@
 
     if (style === "claro") {
       const k = countOf(n, 13, 24);
-      const cols = Math.min(k, 13);
-      const squares = Array.from({ length: k }, (_, i) => `<li>${pad(i + 1)}</li>`).join("");
+      const cols = k <= 13 ? k : Math.ceil(k / 2);
+      const faces = imgList(c.capa_rostos);
+      const squares = Array.from({ length: k }, (_, i) => faces[i]
+        ? `<li class="has-face"><img src="${esc(img(faces[i]))}" alt="" loading="lazy"></li>`
+        : `<li>${pad(i + 1)}</li>`).join("");
       return `<div class="cover cover--claro"><div class="cv-in">
         <div class="cv-head">
           <div class="cv-num" style="--fs:${fs(n, 24, 60)}">${esc(n)}</div>
@@ -112,7 +133,8 @@
   function caseView(c, i) {
     const next = CASES[(i + 1) % CASES.length];
     const ficha = list(c.ficha).filter(f => has(f.rotulo) && has(f.valor));
-    const gal = (Array.isArray(c.galeria) ? c.galeria : has(c.galeria) ? [c.galeria] : []).filter(has);
+    const gal = imgList(c.galeria);
+    const vid = player(c.video, c.cliente + ", " + c.titulo, c.video_formato === "vertical");
     return `<div class="view" data-view="${c._id}" data-title="${esc(c.cliente + ", " + c.titulo)}" hidden><div class="wrap case-page">
       <a class="back" href="#cases"><span aria-hidden="true">←</span> Todos os cases</a>
       <header class="cp-head g12">
@@ -120,6 +142,7 @@
         ${has(c.resumo) ? `<p class="cp-summary">${esc(c.resumo)}</p>` : ""}
       </header>
       <div class="cp-cover">${cover(c)}</div>
+      ${vid ? `<section class="cp-video"><h2 class="mini-h">Vídeo</h2>${vid}</section>` : ""}
       <div class="g12">
         ${ficha.length ? `<aside class="cp-ficha"><h2 class="mini-h">Ficha</h2><dl>${ficha.map(f => `<div><dt>${esc(f.rotulo)}</dt><dd>${esc(f.valor)}</dd></div>`).join("")}</dl></aside>` : ""}
         <div class="cp-sections">
@@ -146,7 +169,7 @@
       return `<div>
         <div class="proj-col-head"><h3>${esc(cat)}</h3><span class="sec-meta">${pad(items.length)}</span></div>
         <ul class="proj-list">${items.map(({ p, i }) => {
-          const open = has(p.texto) || has(p.imagem);
+          const open = has(p.texto) || has(p.imagem) || has(p.video);
           return `<li><${open ? `button class="proj-row" type="button" data-proj="${i}" aria-haspopup="dialog"` : `div class="proj-row is-static"`}>
             <span class="pr-client">${esc(p.cliente)}</span><span class="pr-title">${esc(p.titulo)}</span><span class="pr-icon" aria-hidden="true">+</span>
           </${open ? "button" : "div"}></li>`;
@@ -294,13 +317,14 @@
     const im = $("#pd-img");
     if (has(p.imagem)) { im.src = img(p.imagem); im.alt = [p.cliente, p.titulo].filter(has).join(", "); im.hidden = false; }
     else { im.hidden = true; im.removeAttribute("src"); }
+    $("#pd-video").innerHTML = player(p.video, [p.cliente, p.titulo].filter(has).join(", "), p.video_formato === "vertical");
     const t = $("#pd-text");
     t.textContent = p.texto || "";
     t.hidden = !has(p.texto);
     if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
   }
   function closeProj() {
-    if (dlg.open) { if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open"); }
+    if (dlg.open) { $("#pd-video").innerHTML = ""; if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open"); }
   }
   dlg.addEventListener("click", e => { if (e.target === dlg) closeProj(); });
   $(".pd-close").addEventListener("click", closeProj);

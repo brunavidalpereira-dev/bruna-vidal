@@ -161,6 +161,26 @@ content:
             label: Nome de cada coluna (estilo escuro)
             description: Ex. Praça. As colunas ficam numeradas.
             type: string
+          - name: capa_rostos
+            label: Rostos da capa (estilo claro)
+            description: Fotos de perfil dos influenciadores, uma por quadro, na ordem da lista. Formato quadrado ou vertical.
+            type: image
+            options:
+              multiple:
+                max: 24
+          - name: video
+            label: Vídeo do case (opcional)
+            description: Link do Google Drive, YouTube ou Vimeo. No Drive, o arquivo precisa estar compartilhado como "Qualquer pessoa com o link".
+            type: string
+          - name: video_formato
+            label: Formato do vídeo
+            type: select
+            options:
+              values:
+                - name: horizontal
+                  label: Horizontal (16:9)
+                - name: vertical
+                  label: Vertical (9:16)
           - name: galeria
             label: Galeria de imagens
             description: Até 6 imagens autorizadas do projeto.
@@ -172,7 +192,7 @@ content:
       # ---------- Outros projetos ----------
       - name: projetos
         label: Outros projetos
-        description: Projetos sem texto e sem imagem aparecem na lista, mas não abrem.
+        description: Projetos sem texto, imagem ou vídeo aparecem na lista, mas não abrem.
         type: object
         list:
           collapsible:
@@ -197,6 +217,19 @@ content:
           - name: imagem
             label: Imagem (opcional)
             type: image
+          - name: video
+            label: Vídeo (opcional)
+            description: Link do Google Drive, YouTube ou Vimeo. No Drive, o arquivo precisa estar compartilhado como "Qualquer pessoa com o link".
+            type: string
+          - name: video_formato
+            label: Formato do vídeo
+            type: select
+            options:
+              values:
+                - name: horizontal
+                  label: Horizontal (16:9)
+                - name: vertical
+                  label: Vertical (9:16)
 
       # ---------- Marcas ----------
       - name: marcas
