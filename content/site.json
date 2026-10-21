@@ -90,7 +90,8 @@
       "capa_imagem": "",
       "galeria": [],
       "capa_rostos": [],
-      "video": ""
+      "video": "https://drive.google.com/file/d/1OFhDe1tiKZ4_KQG95dg5nhBRWC-4o5wh/view",
+      "video_formato": "horizontal"
     },
     {
       "cliente": "Brahma",
@@ -138,7 +139,8 @@
       "capa_imagem": "",
       "galeria": [],
       "capa_rostos": [],
-      "video": ""
+      "video": "https://drive.google.com/file/d/1FoJt6vPhCdKHcp2IRvrpYg0Hk5iq0YNP/view",
+      "video_formato": "horizontal"
     },
     {
       "cliente": "Governo do Brasil",
@@ -189,8 +191,9 @@
       "capa_rotulo_item": "",
       "capa_imagem": "",
       "capa_rostos": [],
-      "video": "",
-      "galeria": []
+      "video": "https://drive.google.com/file/d/1Uz5UryrP40mC3mu-2SNnf74pyXc4yqKO/view",
+      "galeria": [],
+      "video_formato": "horizontal"
     }
   ],
   "projetos": [
@@ -208,7 +211,8 @@
       "titulo": "Isenção de IR + Luz do Povo",
       "texto": "Campanha do Governo Federal com influenciadores para explicar a isenção do Imposto de Renda e o Luz do Povo em linguagem próxima do dia a dia, aproximando as medidas de quem é impactado por elas.",
       "imagem": "",
-      "video": ""
+      "video": "https://drive.google.com/file/d/1eR9C6xHNJs_FWhkeK43YfOqvqY2QfXhM/view",
+      "video_formato": "horizontal"
     },
     {
       "categoria": "Público",
@@ -216,7 +220,8 @@
       "titulo": "Minha Casa Minha Vida",
       "texto": "Ação do Governo da Bahia com influenciadores para divulgar o Minha Casa Minha Vida no estado e aproximar o programa das famílias que podem ser beneficiadas.",
       "imagem": "",
-      "video": ""
+      "video": "https://drive.google.com/file/d/1bufq2luoaws-G7r2MdZQncxcxt_ohLhq/view",
+      "video_formato": "horizontal"
     },
     {
       "categoria": "Público",
@@ -224,7 +229,8 @@
       "titulo": "VLT",
       "texto": "Comunicação do Governo da Bahia com influenciadores para apresentar o VLT de Salvador à população, do andamento da obra ao novo modal na rotina da cidade.",
       "imagem": "",
-      "video": ""
+      "video": "https://drive.google.com/file/d/1p2NlBiXd60MAMI9e9RaXYI9PhTS-0Apw/view",
+      "video_formato": "horizontal"
     },
     {
       "categoria": "Público",
@@ -232,7 +238,8 @@
       "titulo": "Latinos 2026",
       "texto": "Campanha internacional em que cinco influenciadores estrangeiros viveram experiências distintas pelo Brasil, com mapeamento, contratação, logística e gestão de ponta a ponta.",
       "imagem": "",
-      "video": ""
+      "video": "https://drive.google.com/file/d/192RHOTX1G2e92ernts-eTW5_HFYIyjn_/view",
+      "video_formato": "horizontal"
     },
     {
       "categoria": "Público",
@@ -248,7 +255,8 @@
       "titulo": "Sapucaí com Paolla Oliveira",
       "texto": "Carnaval 2025 da Brahma na Marquês de Sapucaí com Paolla Oliveira. Gestão de influenciadores para ampliar a presença da marca na avenida e nas redes durante os desfiles.",
       "imagem": "",
-      "video": ""
+      "video": "https://drive.google.com/file/d/1Sp8Yl8CFercw_wTP6rV0YLoU2GGOtY-T/view",
+      "video_formato": "horizontal"
     },
     {
       "categoria": "Privado",
@@ -264,7 +272,8 @@
       "titulo": "Carna Copa: Abrasileirando Carlo Ancelotti",
       "texto": "Gestão de um squad de influenciadores em Salvador, Rio de Janeiro e São Paulo para divulgar a ativação de abrasileiramento de Carlo Ancelotti.",
       "imagem": "",
-      "video": ""
+      "video": "https://drive.google.com/file/d/19oyWwQoFFBFrSFXFjUBROAwmviLU7q0R/view",
+      "video_formato": "horizontal"
     }
   ],
   "marcas": [
