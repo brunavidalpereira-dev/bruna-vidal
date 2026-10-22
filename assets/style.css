@@ -330,3 +330,4 @@ dialog::backdrop{background:rgba(42,31,24,.62)}
 .squad img{width:72px;height:72px;flex:none;aspect-ratio:1;margin:0;clip-path:circle(46%);background:none}
 .squad .sq-text{display:flex;flex-direction:column;gap:2px;min-width:0}
 @media (min-width:860px){.squad{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cp-video:last-child{margin-bottom:0}

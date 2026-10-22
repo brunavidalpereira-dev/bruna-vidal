@@ -148,6 +148,8 @@ content:
                   label: Escuro, com colunas (uma por item)
                 - name: claro
                   label: Claro, com quadros (um por item)
+                - name: nenhuma
+                  label: Sem capa (mostra só o vídeo)
           - name: capa_linha
             label: Linha de apoio da capa
             description: Texto curto no canto da capa. Ex. Copa do Mundo

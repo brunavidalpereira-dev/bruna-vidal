@@ -48,6 +48,7 @@
     if (has(c.capa_imagem)) {
       return `<div class="cover cover--imagem"><img src="${esc(img(c.capa_imagem))}" alt="${esc(c.cliente + ", " + c.titulo)}" loading="lazy"></div>`;
     }
+    if (c.capa_estilo === "nenhuma") return "";
     const n = has(c.destaque_numero) ? String(c.destaque_numero).trim() : "";
     const top = `<div class="cv-top"><span>${esc(c.cliente)} · ${esc(c.titulo)}</span>${has(c.capa_linha) ? `<span>${esc(c.capa_linha)}</span>` : ""}</div>`;
     const style = c.capa_estilo || "azul";
@@ -122,7 +123,8 @@
   function caseRow(c, i) {
     const layout = ["left", "right", "full"][i % 3];
     const vid = player(c.video, c.cliente + ", " + c.titulo, c.video_formato === "vertical");
-    const coverLink = `<a class="case-cover" href="#${c._id}" aria-label="Abrir case ${esc(c.cliente)}, ${esc(c.titulo)}">${cover(c)}</a>`;
+    const cv = cover(c);
+    const coverLink = cv ? `<a class="case-cover" href="#${c._id}" aria-label="Abrir case ${esc(c.cliente)}, ${esc(c.titulo)}">${cv}</a>` : "";
     const media = layout === "full"
       ? coverLink + (vid ? `<div class="case-video">${vid}</div>` : "")
       : `<div class="case-media">${coverLink}${vid}</div>`;
@@ -150,7 +152,7 @@
         ${has(c.resumo) ? `<p class="cp-summary">${esc(c.resumo)}</p>` : ""}
       </header>
       ${vid ? `<section class="cp-video">${vid}</section>` : ""}
-      <div class="cp-cover">${cover(c)}</div>
+      ${cover(c) ? `<div class="cp-cover">${cover(c)}</div>` : ""}
       <div class="g12">
         ${ficha.length ? `<aside class="cp-ficha"><h2 class="mini-h">Ficha</h2><dl>${ficha.map(f => `<div><dt>${esc(f.rotulo)}</dt><dd>${esc(f.valor)}</dd></div>`).join("")}</dl></aside>` : ""}
         <div class="cp-sections">
