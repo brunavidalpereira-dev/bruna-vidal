@@ -324,9 +324,9 @@ dialog::backdrop{background:rgba(42,31,24,.62)}
 
 /* Rostos em círculo (fotos pequenas do report da campanha) */
 .cv-squad li.has-face{display:flex;align-items:center;justify-content:center;background:var(--paper);border-color:var(--line)}
-.cv-squad li.has-face img{width:66%;height:auto;aspect-ratio:1;object-fit:cover;clip-path:circle(46%)}
+.cv-squad li.has-face img{width:84%;height:auto;aspect-ratio:1;object-fit:cover;clip-path:circle(46%)}
 .squad li{flex-direction:row;align-items:center;gap:12px}
 .squad li > span{display:block}
-.squad img{width:52px;height:52px;flex:none;aspect-ratio:1;margin:0;clip-path:circle(46%);background:none}
+.squad img{width:72px;height:72px;flex:none;aspect-ratio:1;margin:0;clip-path:circle(46%);background:none}
 .squad .sq-text{display:flex;flex-direction:column;gap:2px;min-width:0}
 @media (min-width:860px){.squad{grid-template-columns:repeat(3,minmax(0,1fr))}}
