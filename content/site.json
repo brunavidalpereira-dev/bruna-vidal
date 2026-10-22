@@ -295,9 +295,71 @@
       "categoria": "Público",
       "cliente": "Caixa",
       "titulo": "AON Loterias",
-      "texto": "Estruturação de um squad de 13 influenciadores para a produção de conteúdo social das Loterias ao longo de 2026, com estratégia de comunicação por pilar e gestão integral das campanhas.",
+      "texto": "Estruturação de um squad de 13 perfis, sendo 12 creators e uma página digital, para a produção de conteúdo social das Loterias ao longo de 2026, com estratégia de comunicação por pilar e gestão integral das campanhas.",
       "imagem": "",
-      "video": ""
+      "video": "",
+      "squad": [
+        {
+          "nome": "Giovanna Pitel",
+          "perfil": "@pitelgiovanna",
+          "foto": "images/squad-loterias-giovanna-pitel.jpg"
+        },
+        {
+          "nome": "Índio Behn",
+          "perfil": "@indio.behn",
+          "foto": "images/squad-loterias-indio-behn.jpg"
+        },
+        {
+          "nome": "Felipe Hatori",
+          "perfil": "@felipehatori",
+          "foto": "images/squad-loterias-felipe-hatori.jpg"
+        },
+        {
+          "nome": "Mila Costa",
+          "perfil": "@nocasomila",
+          "foto": "images/squad-loterias-mila-costa.jpg"
+        },
+        {
+          "nome": "Rodolfo Macêdo",
+          "perfil": "@foiorodolfo",
+          "foto": "images/squad-loterias-rodolfo-macedo.jpg"
+        },
+        {
+          "nome": "Cereja",
+          "perfil": "@cerejaaaaaa",
+          "foto": "images/squad-loterias-cereja.jpg"
+        },
+        {
+          "nome": "Aline Costa",
+          "perfil": "@comcertezaaline",
+          "foto": "images/squad-loterias-aline-costa.jpg"
+        },
+        {
+          "nome": "Jaiane Alves",
+          "perfil": "@jaialvesz",
+          "foto": "images/squad-loterias-jaiane-alves.jpg"
+        },
+        {
+          "nome": "Davi",
+          "perfil": "@davizoa",
+          "foto": "images/squad-loterias-davi.jpg"
+        },
+        {
+          "nome": "Morgana Camila",
+          "perfil": "@morganacamila",
+          "foto": "images/squad-loterias-morgana-camila.jpg"
+        },
+        {
+          "nome": "Peu da Mata",
+          "perfil": "@peudamata",
+          "foto": "images/squad-loterias-peu-da-mata.jpg"
+        },
+        {
+          "nome": "Bárbara Lins",
+          "perfil": "@babilins",
+          "foto": "images/squad-loterias-barbara-lins.jpg"
+        }
+      ]
     },
     {
       "categoria": "Público",
@@ -306,7 +368,8 @@
       "texto": "Campanha do Governo Federal com influenciadores para explicar a isenção do Imposto de Renda e o Luz do Povo em linguagem próxima do dia a dia, aproximando as medidas de quem é impactado por elas.",
       "imagem": "",
       "video": "https://drive.google.com/file/d/1eR9C6xHNJs_FWhkeK43YfOqvqY2QfXhM/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "categoria": "Público",
@@ -315,7 +378,8 @@
       "texto": "Ação do Governo da Bahia com influenciadores para divulgar o Minha Casa Minha Vida no estado e aproximar o programa das famílias que podem ser beneficiadas.",
       "imagem": "",
       "video": "https://drive.google.com/file/d/1bufq2luoaws-G7r2MdZQncxcxt_ohLhq/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "categoria": "Público",
@@ -324,7 +388,8 @@
       "texto": "Comunicação do Governo da Bahia com influenciadores para apresentar o VLT de Salvador à população, do andamento da obra ao novo modal na rotina da cidade.",
       "imagem": "",
       "video": "https://drive.google.com/file/d/1p2NlBiXd60MAMI9e9RaXYI9PhTS-0Apw/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "categoria": "Público",
@@ -333,7 +398,8 @@
       "texto": "Campanha internacional em que cinco influenciadores estrangeiros viveram experiências distintas pelo Brasil, com mapeamento, contratação, logística e gestão de ponta a ponta.",
       "imagem": "",
       "video": "https://drive.google.com/file/d/192RHOTX1G2e92ernts-eTW5_HFYIyjn_/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "categoria": "Público",
@@ -341,7 +407,8 @@
       "titulo": "Réveillon 300 Anos Fortaleza",
       "texto": "Seleção e gestão de influenciadores regionais para promover e viver a celebração dos 300 anos de Fortaleza, com cobertura em tempo real ao longo de três dias.",
       "imagem": "",
-      "video": ""
+      "video": "",
+      "squad": []
     },
     {
       "categoria": "Privado",
@@ -350,7 +417,8 @@
       "texto": "Carnaval 2025 da Brahma na Marquês de Sapucaí com Paolla Oliveira. Gestão de influenciadores para ampliar a presença da marca na avenida e nas redes durante os desfiles.",
       "imagem": "",
       "video": "https://drive.google.com/file/d/1Sp8Yl8CFercw_wTP6rV0YLoU2GGOtY-T/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "categoria": "Privado",
@@ -358,7 +426,8 @@
       "titulo": "Sapucaí com Sabrina Sato",
       "texto": "Carnaval 2026 da Brahma na Marquês de Sapucaí ao lado de Sabrina Sato, com influenciadores cobrindo a experiência da marca na avenida e levando o desfile para as redes.",
       "imagem": "images/brahma-sapucai-2026-sabrina-sato.jpg",
-      "video": ""
+      "video": "",
+      "squad": []
     },
     {
       "categoria": "Privado",
@@ -367,7 +436,8 @@
       "texto": "Gestão de um squad de influenciadores em Salvador, Rio de Janeiro e São Paulo para divulgar a ativação de abrasileiramento de Carlo Ancelotti.",
       "imagem": "",
       "video": "https://drive.google.com/file/d/19oyWwQoFFBFrSFXFjUBROAwmviLU7q0R/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     }
   ],
   "marcas": [
@@ -440,12 +510,35 @@
       "Briefing e gestão de storymakers e filmmakers",
       "Integração entre conteúdo, mídia, BI e influência"
     ],
-    "formacao_curso": "Direito",
-    "formacao_instituicao": "Universidade Presbiteriana Mackenzie",
-    "formacao_periodo": "2017 a 2021",
     "idiomas": "Inglês e espanhol",
     "contato_titulo": "Vamos conversar?",
     "contato_texto": "Para projetos de digital e influência, squads de creators e campanhas com várias praças.",
-    "contato_botao": "Entre em contato"
+    "contato_botao": "Entre em contato",
+    "formacao": [
+      {
+        "tipo": "Graduação",
+        "curso": "Direito",
+        "instituicao": "Universidade Presbiteriana Mackenzie",
+        "periodo": "2017 a 2021"
+      },
+      {
+        "tipo": "Curso complementar",
+        "curso": "Intensivo em Marketing Digital",
+        "instituicao": "ESPM",
+        "periodo": "2024"
+      },
+      {
+        "tipo": "Curso complementar",
+        "curso": "Social Media Marketing",
+        "instituicao": "EBAC",
+        "periodo": "2024"
+      },
+      {
+        "tipo": "Curso complementar",
+        "curso": "Marketing Digital",
+        "instituicao": "EBAC",
+        "periodo": "2023"
+      }
+    ]
   }
 }

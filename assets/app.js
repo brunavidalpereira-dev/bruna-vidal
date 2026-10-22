@@ -94,6 +94,10 @@
   }
 
   /* ---------- Blocos ---------- */
+  function squadList(items, compact) {
+    return `<ul class="squad${compact ? " squad--compact" : ""}">${items.map(p => `<li>${has(p.foto) ? `<img src="${esc(img(p.foto))}" alt="" loading="lazy">` : ""}<span class="sq-text"><span class="sq-name">${esc(p.nome)}</span>${has(p.perfil) ? `<span class="sq-handle">${esc(p.perfil)}</span>` : ""}</span></li>`).join("")}</ul>`;
+  }
+
   function numbers() {
     const items = list(C.indicadores).filter(n => n && n.publicar !== false && has(n.numero));
     if (!items.length) return "";
@@ -162,7 +166,7 @@
         </div>
       </div>
       ${squad.length ? `<section class="cp-squad"><h2 class="mini-h">Squad · ${pad(squad.length)} influenciadores</h2>
-        <ul class="squad">${squad.map(p => `<li>${has(p.foto) ? `<img src="${esc(img(p.foto))}" alt="" loading="lazy">` : ""}<span class="sq-text"><span class="sq-name">${esc(p.nome)}</span>${has(p.perfil) ? `<span class="sq-handle">${esc(p.perfil)}</span>` : ""}</span></li>`).join("")}</ul></section>` : ""}
+        ${squadList(squad)}</section>` : ""}
       ${gal.length ? `<section class="cp-gallery"><h2 class="mini-h">Registros do projeto</h2>
         <div class="gal">${gal.map((g, k) => `<img src="${esc(img(g))}" alt="${esc(c.cliente + ", " + c.titulo + ", imagem " + (k + 1))}" loading="lazy">`).join("")}</div></section>` : ""}
       ${CASES.length > 1 ? `<a class="next-case" href="#${next._id}"><span class="eyebrow">Próximo case</span><span class="nc-title">${esc(next.cliente)}, ${esc(next.titulo)}</span><span class="nc-arrow" aria-hidden="true">→</span></a>` : ""}
@@ -182,7 +186,7 @@
       return `<div>
         <div class="proj-col-head"><h3>${esc(cat)}</h3><span class="sec-meta">${pad(items.length)}</span></div>
         <ul class="proj-list">${items.map(({ p, i }) => {
-          const open = has(p.texto) || has(p.imagem) || has(p.video);
+          const open = has(p.texto) || has(p.imagem) || has(p.video) || list(p.squad).some(q => q && has(q.nome));
           return `<li><${open ? `button class="proj-row" type="button" data-proj="${i}" aria-haspopup="dialog"` : `div class="proj-row is-static"`}>
             <span class="pr-client">${esc(p.cliente)}</span><span class="pr-title">${esc(p.titulo)}</span><span class="pr-icon" aria-hidden="true">+</span>
           </${open ? "button" : "div"}></li>`;
@@ -238,6 +242,9 @@
     const s = C.sobre || {};
     const traj = list(s.trajetoria).filter(t => has(t.empresa));
     const comp = list(s.competencias).filter(has);
+    const form = list(s.formacao).filter(f => f && has(f.curso));
+    const grad = form.filter(f => (f.tipo || "Graduação") === "Graduação");
+    const extra = form.filter(f => (f.tipo || "Graduação") !== "Graduação");
     const nums = numbers();
     return `<div class="view" data-view="sobre" data-title="Sobre" hidden>
       <section class="wrap g12 about-open" aria-labelledby="t-sobre">
@@ -272,14 +279,18 @@
         <ul class="skills">${comp.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
       </section>` : ""}
 
-      ${has(s.formacao_curso) || has(s.idiomas) ? `<section class="section wrap" aria-labelledby="t-form" style="padding-top:0">
+      ${form.length || has(s.idiomas) ? `<section class="section wrap" aria-labelledby="t-form" style="padding-top:0">
         <div class="sec-head"><h2 class="sec-title" id="t-form">Formação e idiomas</h2></div>
-        <div class="g12">
-          ${has(s.formacao_curso) ? `<div class="edu-block edu-a">
-            <p class="mini-h">Formação</p>
-            <p class="edu-big">${esc(s.formacao_curso)}</p>
-            ${has(s.formacao_instituicao) ? `<p class="edu-sub">${esc(s.formacao_instituicao)}</p>` : ""}
-            ${has(s.formacao_periodo) ? `<p class="edu-meta">${esc(s.formacao_periodo)}</p>` : ""}
+        <div class="g12 edu-grid">
+          ${grad.length ? `<div class="edu-block edu-a">
+            <p class="mini-h">Graduação</p>
+            ${grad.map(f => `<div class="edu-item"><p class="edu-big">${esc(f.curso)}</p>
+              ${has(f.instituicao) ? `<p class="edu-sub">${esc(f.instituicao)}</p>` : ""}
+              ${has(f.periodo) ? `<p class="edu-meta">${esc(f.periodo)}</p>` : ""}</div>`).join("")}
+          </div>` : ""}
+          ${extra.length ? `<div class="edu-block edu-c">
+            <p class="mini-h">Cursos complementares</p>
+            <ul class="edu-list">${extra.map(f => `<li><span class="edu-course">${esc(f.curso)}</span><span class="edu-meta">${[f.instituicao, f.periodo].filter(has).map(esc).join(" · ")}</span></li>`).join("")}</ul>
           </div>` : ""}
           ${has(s.idiomas) ? `<div class="edu-block edu-b"><p class="mini-h">Idiomas</p><p class="edu-big">${esc(s.idiomas)}</p></div>` : ""}
         </div>
@@ -336,6 +347,8 @@
     const t = $("#pd-text");
     t.textContent = p.texto || "";
     t.hidden = !has(p.texto);
+    const sq = list(p.squad).filter(q => q && has(q.nome));
+    $("#pd-squad").innerHTML = sq.length ? `<h3 class="mini-h">Squad · ${pad(sq.length)} creators</h3>${squadList(sq, true)}` : "";
     if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
   }
   function closeProj() {

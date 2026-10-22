@@ -214,7 +214,7 @@ content:
       # ---------- Outros projetos ----------
       - name: projetos
         label: Outros projetos
-        description: Projetos sem texto, imagem ou vídeo aparecem na lista, mas não abrem.
+        description: Projetos sem texto, imagem, vídeo ou squad aparecem na lista, mas não abrem.
         type: object
         list:
           collapsible:
@@ -239,6 +239,26 @@ content:
           - name: imagem
             label: Imagem (opcional)
             type: image
+          - name: squad
+            label: Squad de influenciadores (opcional)
+            description: Aparece dentro do projeto, abaixo do texto.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{nome}"
+            fields:
+              - name: nome
+                label: Nome
+                type: string
+              - name: perfil
+                label: Perfil
+                description: Ex. @usuario
+                type: string
+              - name: foto
+                label: Foto
+                description: Quadrada, de preferência.
+                type: image
           - name: video
             label: Vídeo (opcional)
             description: Link do Google Drive, YouTube ou Vimeo. No Drive, o arquivo precisa estar compartilhado como "Qualquer pessoa com o link".
@@ -330,15 +350,29 @@ content:
             label: Competências
             type: string
             list: true
-          - name: formacao_curso
-            label: Formação, curso
-            type: string
-          - name: formacao_instituicao
-            label: Formação, instituição
-            type: string
-          - name: formacao_periodo
-            label: Formação, período
-            type: string
+          - name: formacao
+            label: Formação
+            description: Graduação aparece em destaque; cursos complementares aparecem em lista, do mais recente ao mais antigo, na ordem desta lista.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{curso} · {instituicao}"
+            fields:
+              - name: tipo
+                label: Tipo
+                type: select
+                options:
+                  values: [Graduação, Curso complementar]
+              - name: curso
+                label: Curso
+                type: string
+              - name: instituicao
+                label: Instituição
+                type: string
+              - name: periodo
+                label: Período ou ano de conclusão
+                type: string
           - name: idiomas
             label: Idiomas
             type: string
