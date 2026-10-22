@@ -67,7 +67,9 @@
     if (style === "claro") {
       const k = countOf(n, 13, 24);
       const cols = k <= 13 ? k : Math.ceil(k / 2);
-      const faces = imgList(c.capa_rostos);
+      const squadFaces = list(c.squad).map(p => p && p.foto);
+      const extra = imgList(c.capa_rostos);
+      const faces = Array.from({ length: k }, (_, i) => has(squadFaces[i]) ? squadFaces[i] : extra[i]);
       const squares = Array.from({ length: k }, (_, i) => faces[i]
         ? `<li class="has-face"><img src="${esc(img(faces[i]))}" alt="" loading="lazy"></li>`
         : `<li>${pad(i + 1)}</li>`).join("");
@@ -139,6 +141,7 @@
     const next = CASES[(i + 1) % CASES.length];
     const ficha = list(c.ficha).filter(f => has(f.rotulo) && has(f.valor));
     const gal = imgList(c.galeria);
+    const squad = list(c.squad).filter(p => p && has(p.nome));
     const vid = player(c.video, c.cliente + ", " + c.titulo, c.video_formato === "vertical");
     return `<div class="view" data-view="${c._id}" data-title="${esc(c.cliente + ", " + c.titulo)}" hidden><div class="wrap case-page">
       <a class="back" href="#cases"><span aria-hidden="true">←</span> Todos os cases</a>
@@ -146,8 +149,8 @@
         <div class="cp-titles"><p class="eyebrow">Case ${pad(i + 1)} · ${esc(c.cliente)}</p><h1 class="cp-title" tabindex="-1">${esc(c.titulo)}${has(c.subtitulo) ? `<span>${esc(c.subtitulo)}</span>` : ""}</h1></div>
         ${has(c.resumo) ? `<p class="cp-summary">${esc(c.resumo)}</p>` : ""}
       </header>
+      ${vid ? `<section class="cp-video">${vid}</section>` : ""}
       <div class="cp-cover">${cover(c)}</div>
-      ${vid ? `<section class="cp-video"><h2 class="mini-h">Vídeo</h2>${vid}</section>` : ""}
       <div class="g12">
         ${ficha.length ? `<aside class="cp-ficha"><h2 class="mini-h">Ficha</h2><dl>${ficha.map(f => `<div><dt>${esc(f.rotulo)}</dt><dd>${esc(f.valor)}</dd></div>`).join("")}</dl></aside>` : ""}
         <div class="cp-sections">
@@ -155,6 +158,8 @@
           ${has(c.destaque_numero) ? `<div class="cp-highlight"><p class="cp-hl-num">${esc(c.destaque_numero)}</p><p>${esc(c.destaque_legenda)}</p></div>` : ""}
         </div>
       </div>
+      ${squad.length ? `<section class="cp-squad"><h2 class="mini-h">Squad · ${pad(squad.length)} influenciadores</h2>
+        <ul class="squad">${squad.map(p => `<li>${has(p.foto) ? `<img src="${esc(img(p.foto))}" alt="" loading="lazy">` : ""}<span class="sq-name">${esc(p.nome)}</span>${has(p.perfil) ? `<span class="sq-handle">${esc(p.perfil)}</span>` : ""}</li>`).join("")}</ul></section>` : ""}
       ${gal.length ? `<section class="cp-gallery"><h2 class="mini-h">Registros do projeto</h2>
         <div class="gal">${gal.map((g, k) => `<img src="${esc(img(g))}" alt="${esc(c.cliente + ", " + c.titulo + ", imagem " + (k + 1))}" loading="lazy">`).join("")}</div></section>` : ""}
       ${CASES.length > 1 ? `<a class="next-case" href="#${next._id}"><span class="eyebrow">Próximo case</span><span class="nc-title">${esc(next.cliente)}, ${esc(next.titulo)}</span><span class="nc-arrow" aria-hidden="true">→</span></a>` : ""}

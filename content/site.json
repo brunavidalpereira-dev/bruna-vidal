@@ -6,7 +6,7 @@
   "email": "brunavidalpereira@gmail.com",
   "localizacao": "São Paulo / Salvador",
   "linkedin": "",
-  "foto": "",
+  "foto": "images/bruna-vidal.jpg",
   "indicadores": [
     {
       "numero": "5+",
@@ -91,7 +91,8 @@
       "galeria": [],
       "capa_rostos": [],
       "video": "https://drive.google.com/file/d/1OFhDe1tiKZ4_KQG95dg5nhBRWC-4o5wh/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "cliente": "Brahma",
@@ -140,7 +141,8 @@
       "galeria": [],
       "capa_rostos": [],
       "video": "https://drive.google.com/file/d/1FoJt6vPhCdKHcp2IRvrpYg0Hk5iq0YNP/view",
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": []
     },
     {
       "cliente": "Governo do Brasil",
@@ -193,7 +195,99 @@
       "capa_rostos": [],
       "video": "https://drive.google.com/file/d/1Uz5UryrP40mC3mu-2SNnf74pyXc4yqKO/view",
       "galeria": [],
-      "video_formato": "horizontal"
+      "video_formato": "horizontal",
+      "squad": [
+        {
+          "nome": "Day Soares",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Giovanna Pitel",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Ivan Mesquita",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Negaluu",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Morgana Camila",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Bruna Hazin",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Gaiato",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Alysson Dias",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Gabi Pinho",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Thaís Leia",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Rodolfo Macêdo",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Gustavo Sena",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Gyovanna Lany",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Stenio Birth",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Paulo Victor",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Ivan Baron",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Luiza Allan",
+          "perfil": "",
+          "foto": ""
+        },
+        {
+          "nome": "Nathalia Liborio",
+          "perfil": "",
+          "foto": ""
+        }
+      ]
     }
   ],
   "projetos": [
