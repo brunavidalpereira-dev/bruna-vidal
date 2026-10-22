@@ -92,7 +92,136 @@
       "capa_rostos": [],
       "video": "https://drive.google.com/file/d/1OFhDe1tiKZ4_KQG95dg5nhBRWC-4o5wh/view",
       "video_formato": "horizontal",
-      "squad": []
+      "squad": [
+        {
+          "nome": "Magá Moura",
+          "perfil": "@magavilhas",
+          "funcao": "Hostess",
+          "foto": "images/sebrae-squad-maga-moura.jpg"
+        },
+        {
+          "nome": "Bráulio Bessa",
+          "perfil": "@brauliobessa",
+          "funcao": "Big name",
+          "foto": "images/sebrae-squad-braulio-bessa.jpg"
+        },
+        {
+          "nome": "Renata Saldanha",
+          "perfil": "@_renatasaldanha",
+          "funcao": "Big name",
+          "foto": "images/sebrae-squad-renata-saldanha.jpg"
+        },
+        {
+          "nome": "Yasmin Yassini",
+          "perfil": "@yasyassini",
+          "funcao": "Big name",
+          "foto": "images/sebrae-squad-yasmin-yassini.jpg"
+        },
+        {
+          "nome": "Giovanna Pitel",
+          "perfil": "@pitelgiovanna",
+          "funcao": "Big name",
+          "foto": "images/sebrae-squad-giovanna-pitel.jpg"
+        },
+        {
+          "nome": "Valentina Bandeira",
+          "perfil": "@valenbandeira",
+          "funcao": "Big name",
+          "foto": "images/sebrae-squad-valentina-bandeira.jpg"
+        },
+        {
+          "nome": "Jaiane Alves",
+          "perfil": "@jaialvesz",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-jaiane-alves.jpg"
+        },
+        {
+          "nome": "Lucas Leto",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-lucas-leto.jpg"
+        },
+        {
+          "nome": "Anderson Ricardo",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-anderson-ricardo.jpg"
+        },
+        {
+          "nome": "Darko",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-darko.jpg"
+        },
+        {
+          "nome": "Tia Má",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-tia-ma.jpg"
+        },
+        {
+          "nome": "Peu da Mata",
+          "perfil": "@peudamata",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-peu-da-mata.jpg"
+        },
+        {
+          "nome": "Hey Vith",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-hey-vith.jpg"
+        },
+        {
+          "nome": "Pietro Reis",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-pietro-reis.jpg"
+        },
+        {
+          "nome": "Luca Scarpelli",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-luca-scarpelli.jpg"
+        },
+        {
+          "nome": "Dinho Junior",
+          "perfil": "",
+          "funcao": "Mezzo",
+          "foto": "images/sebrae-squad-dinho-junior.jpg"
+        }
+      ],
+      "artistas": [
+        {
+          "nome": "MC Hariel",
+          "musica": "Dias de Luta, Dias de Glória",
+          "original": "Charlie Brown Jr.",
+          "foto": "images/sebrae-artista-mc-hariel.jpg"
+        },
+        {
+          "nome": "Marina Sena",
+          "musica": "Feira de Mangaio",
+          "original": "Clara Nunes",
+          "foto": "images/sebrae-artista-marina-sena.jpg"
+        },
+        {
+          "nome": "Ajulia Costa",
+          "musica": "Tente Outra Vez",
+          "original": "Raul Seixas",
+          "foto": "images/sebrae-artista-ajulia-costa.jpg"
+        },
+        {
+          "nome": "Liniker",
+          "musica": "Maria Maria",
+          "original": "Milton Nascimento",
+          "foto": "images/sebrae-artista-liniker.jpg"
+        },
+        {
+          "nome": "Os Garotin",
+          "musica": "É Preciso Saber Viver",
+          "original": "Titãs",
+          "foto": "images/sebrae-artista-os-garotin.jpg"
+        }
+      ]
     },
     {
       "cliente": "Brahma",
@@ -142,7 +271,8 @@
       "capa_rostos": [],
       "video": "https://drive.google.com/file/d/1X9vFK4SIfMvjZwEitwXGc2LY9UVO54I8/view",
       "video_formato": "horizontal",
-      "squad": []
+      "squad": [],
+      "artistas": []
     },
     {
       "cliente": "Governo do Brasil",
@@ -287,7 +417,8 @@
           "perfil": "@nathalialiborio",
           "foto": "images/squad-sj-nathalia-liborio.jpg"
         }
-      ]
+      ],
+      "artistas": []
     }
   ],
   "projetos": [

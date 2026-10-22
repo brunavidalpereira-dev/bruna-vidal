@@ -125,15 +125,34 @@
     </section>`;
   }
 
+  /* Elenco: artistas em destaque + rostos do squad */
+  const artistsOf = c => list(c.artistas).filter(a => a && has(a.nome));
+  const squadOf = c => list(c.squad).filter(p => p && has(p.nome));
+  function artistsPanel(c) {
+    const a = artistsOf(c);
+    if (!a.length) return "";
+    return `<div class="cast-artists"><p class="mini-h">Artistas · ${pad(a.length)}</p>
+      <ul class="artists">${a.map(x => `<li>${has(x.foto) ? `<img src="${esc(img(x.foto))}" alt="${esc(x.nome)}" loading="lazy">` : `<span class="ar-ph" aria-hidden="true"></span>`}
+        <div class="ar-text"><span class="ar-name">${esc(x.nome)}</span>${has(x.musica) ? `<span class="ar-song">${esc(x.musica)}</span>` : ""}${has(x.original) ? `<span class="ar-orig">${esc(x.original)}</span>` : ""}</div></li>`).join("")}</ul></div>`;
+  }
+  function facesStrip(c) {
+    const q = squadOf(c);
+    if (!q.length) return "";
+    return `<div class="cast-squad"><p class="mini-h">Squad · ${pad(q.length)} influenciadores</p>
+      <ul class="faces">${q.map(p => `<li>${has(p.foto) ? `<img src="${esc(img(p.foto))}" alt="" loading="lazy">` : `<span class="fc-ph" aria-hidden="true"></span>`}<span class="fc-name">${esc(p.nome)}</span>${has(p.funcao) ? `<span class="fc-role">${esc(p.funcao)}</span>` : ""}</li>`).join("")}</ul></div>`;
+  }
+
   function caseRow(c, i) {
     const layout = ["left", "right", "full"][i % 3];
     const vid = player(c.video, c.cliente + ", " + c.titulo, c.video_formato === "vertical");
     const cv = cover(c);
     const coverLink = cv ? `<a class="case-cover" href="#${c._id}" aria-label="Abrir case ${esc(c.cliente)}, ${esc(c.titulo)}">${cv}</a>` : "";
+    const cast = layout !== "full" && artistsOf(c).length;
     const media = layout === "full"
       ? coverLink + (vid ? `<div class="case-video">${vid}</div>` : "")
-      : `<div class="case-media">${coverLink}${vid}</div>`;
-    return `<article class="case case--${layout}${vid ? " has-video" : ""} g12">
+      : `<div class="case-media">${coverLink}${cast ? "" : vid}</div>`;
+    const castRow = cast ? `<div class="case-cast">${vid ? `<div class="cast-video">${vid}</div>` : ""}${artistsPanel(c)}</div>${facesStrip(c)}` : "";
+    return `<article class="case case--${layout}${vid ? " has-video" : ""}${cast ? " has-cast" : ""} g12">
       ${media}
       <div class="case-body">
         <p class="eyebrow">Case ${pad(i + 1)} · ${esc(c.cliente)}</p>
@@ -141,6 +160,7 @@
         <dl class="case-dl">${list(c.secoes).filter(s => has(s.texto)).map(s => `<div><dt>${esc(s.titulo)}</dt><dd>${esc(s.texto)}</dd></div>`).join("")}</dl>
         <a class="link-arrow" href="#${c._id}">Ver case completo ${arrow}</a>
       </div>
+      ${castRow}
     </article>`;
   }
 
@@ -156,7 +176,9 @@
         <div class="cp-titles"><p class="eyebrow">Case ${pad(i + 1)} · ${esc(c.cliente)}</p><h1 class="cp-title" tabindex="-1">${esc(c.titulo)}${has(c.subtitulo) ? `<span>${esc(c.subtitulo)}</span>` : ""}</h1></div>
         ${has(c.resumo) ? `<p class="cp-summary">${esc(c.resumo)}</p>` : ""}
       </header>
-      ${vid ? `<section class="cp-video">${vid}</section>` : ""}
+      ${artistsOf(c).length
+        ? `<section class="cp-cast">${vid ? `<div class="cast-video">${vid}</div>` : ""}${artistsPanel(c)}</section>${facesStrip(c) ? `<section class="cp-faces">${facesStrip(c)}</section>` : ""}`
+        : (vid ? `<section class="cp-video">${vid}</section>` : "")}
       ${cover(c) ? `<div class="cp-cover">${cover(c)}</div>` : ""}
       <div class="g12">
         ${ficha.length ? `<aside class="cp-ficha"><h2 class="mini-h">Ficha</h2><dl>${ficha.map(f => `<div><dt>${esc(f.rotulo)}</dt><dd>${esc(f.valor)}</dd></div>`).join("")}</dl></aside>` : ""}
@@ -165,7 +187,7 @@
           ${has(c.destaque_numero) ? `<div class="cp-highlight"><p class="cp-hl-num">${esc(c.destaque_numero)}</p><p>${esc(c.destaque_legenda)}</p></div>` : ""}
         </div>
       </div>
-      ${squad.length ? `<section class="cp-squad"><h2 class="mini-h">Squad · ${pad(squad.length)} influenciadores</h2>
+      ${squad.length && !artistsOf(c).length ? `<section class="cp-squad"><h2 class="mini-h">Squad · ${pad(squad.length)} influenciadores</h2>
         ${squadList(squad)}</section>` : ""}
       ${gal.length ? `<section class="cp-gallery"><h2 class="mini-h">Registros do projeto</h2>
         <div class="gal">${gal.map((g, k) => `<img src="${esc(img(g))}" alt="${esc(c.cliente + ", " + c.titulo + ", imagem " + (k + 1))}" loading="lazy">`).join("")}</div></section>` : ""}

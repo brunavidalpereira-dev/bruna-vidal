@@ -163,9 +163,31 @@ content:
             label: Nome de cada coluna (estilo escuro)
             description: Ex. Praça. As colunas ficam numeradas.
             type: string
+          - name: artistas
+            label: Artistas (opcional)
+            description: Aparecem em destaque ao lado do vídeo do case, na Home e na página do case.
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{nome} · {musica}"
+            fields:
+              - name: nome
+                label: Nome
+                type: string
+              - name: musica
+                label: Música
+                type: string
+              - name: original
+                label: Artista original
+                type: string
+              - name: foto
+                label: Foto
+                description: Vertical, proporção 4:5.
+                type: image
           - name: squad
             label: Squad de influenciadores
-            description: Aparece na página do case. No estilo de capa claro, as fotos daqui preenchem os quadros da capa, na mesma ordem.
+            description: Aparece na página do case. Com artistas cadastrados, vira uma faixa de rostos abaixo do vídeo. No estilo de capa claro, as fotos preenchem os quadros da capa.
             type: object
             list:
               collapsible:
@@ -178,6 +200,10 @@ content:
               - name: perfil
                 label: Perfil (opcional)
                 description: Ex. @usuario
+                type: string
+              - name: funcao
+                label: Função (opcional)
+                description: Ex. Hostess, Big name, Mezzo
                 type: string
               - name: foto
                 label: Foto
