@@ -159,7 +159,7 @@
         </div>
       </div>
       ${squad.length ? `<section class="cp-squad"><h2 class="mini-h">Squad · ${pad(squad.length)} influenciadores</h2>
-        <ul class="squad">${squad.map(p => `<li>${has(p.foto) ? `<img src="${esc(img(p.foto))}" alt="" loading="lazy">` : ""}<span class="sq-name">${esc(p.nome)}</span>${has(p.perfil) ? `<span class="sq-handle">${esc(p.perfil)}</span>` : ""}</li>`).join("")}</ul></section>` : ""}
+        <ul class="squad">${squad.map(p => `<li>${has(p.foto) ? `<img src="${esc(img(p.foto))}" alt="" loading="lazy">` : ""}<span class="sq-text"><span class="sq-name">${esc(p.nome)}</span>${has(p.perfil) ? `<span class="sq-handle">${esc(p.perfil)}</span>` : ""}</span></li>`).join("")}</ul></section>` : ""}
       ${gal.length ? `<section class="cp-gallery"><h2 class="mini-h">Registros do projeto</h2>
         <div class="gal">${gal.map((g, k) => `<img src="${esc(img(g))}" alt="${esc(c.cliente + ", " + c.titulo + ", imagem " + (k + 1))}" loading="lazy">`).join("")}</div></section>` : ""}
       ${CASES.length > 1 ? `<a class="next-case" href="#${next._id}"><span class="eyebrow">Próximo case</span><span class="nc-title">${esc(next.cliente)}, ${esc(next.titulo)}</span><span class="nc-arrow" aria-hidden="true">→</span></a>` : ""}
