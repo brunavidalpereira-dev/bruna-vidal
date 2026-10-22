@@ -5,7 +5,7 @@
   "botao_trajetoria": "Conheça a trajetória",
   "email": "brunavidalpereira@gmail.com",
   "localizacao": "São Paulo / Salvador",
-  "linkedin": "",
+  "linkedin": "https://www.linkedin.com/in/bruna-vidal-249149163/",
   "foto": "images/bruna-vidal.jpg",
   "indicadores": [
     {
@@ -405,7 +405,7 @@
     }
   ],
   "contato_home": {
-    "titulo": "Vamos construir o próximo grande projeto juntos?",
+    "titulo": "Vamos construir o próximo projeto juntos?",
     "texto": "Estratégia, liderança e influência para conectar marcas e pessoas e transformar objetivos em campanhas relevantes.",
     "botao": "Entre em contato"
   },

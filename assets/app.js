@@ -292,7 +292,10 @@
     const email = C.email || "";
     return `<div class="wrap foot-grid">
       <div><p class="foot-name">${esc(C.nome)}</p><p>${esc(C.cargo)}</p></div>
-      ${has(email) ? `<div><p class="mini-h">E-mail</p><p class="foot-email"><a href="mailto:${esc(email)}">${esc(email)}</a></p></div>` : ""}
+      ${has(email) || has(C.linkedin) ? `<div><p class="mini-h">Contato</p>
+        ${has(email) ? `<p class="foot-email"><a href="mailto:${esc(email)}">${esc(email)}</a></p>` : ""}
+        ${has(C.linkedin) ? `<a class="foot-social" href="${esc(C.linkedin)}" target="_blank" rel="noopener" aria-label="LinkedIn de ${esc(C.nome)}"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>` : ""}
+      </div>` : ""}
       ${has(C.localizacao) ? `<div><p class="mini-h">Base</p><p>${esc(C.localizacao)}</p></div>` : ""}
       <div>
         <p class="mini-h">Navegação</p>
@@ -300,7 +303,6 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
-          ${has(C.linkedin) ? `<li><a href="${esc(C.linkedin)}" target="_blank" rel="noopener">LinkedIn</a></li>` : ""}
         </ul>
       </div>
     </div>`;
