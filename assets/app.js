@@ -69,10 +69,11 @@
       const k = countOf(n, 13, 24);
       const cols = k <= 13 ? k : Math.ceil(k / 2);
       const squadFaces = list(c.squad).map(p => p && p.foto);
+      const squadNames = list(c.squad).map(p => p && p.nome);
       const extra = imgList(c.capa_rostos);
       const faces = Array.from({ length: k }, (_, i) => has(squadFaces[i]) ? squadFaces[i] : extra[i]);
       const squares = Array.from({ length: k }, (_, i) => faces[i]
-        ? `<li class="has-face"><img src="${esc(img(faces[i]))}" alt="" loading="lazy"></li>`
+        ? `<li class="has-face"${has(squadNames[i]) ? ` data-nome="${esc(squadNames[i])}"` : ""}><img src="${esc(img(faces[i]))}" alt="" loading="lazy"></li>`
         : `<li>${pad(i + 1)}</li>`).join("");
       return `<div class="cover cover--claro"><div class="cv-in">
         <div class="cv-head">
